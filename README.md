@@ -3,8 +3,8 @@
 자동 쇼츠 생산 파이프라인 MVP입니다.
 
 - Script 자동 생성 (채널/템플릿/룰 기반)
-- 이미지 자동 생성(카드뉴스 템플릿)
-- 음성 자동 생성(TTS Provider: Edge 기본 / Typecast 플러그인)
+- 이미지 자동 생성 (Google Gemini Nano Banana / Nano Banana Pro 지원)
+- 음성 자동 생성 (TTS Provider: Edge 기본 / Typecast 플러그인)
 - ffmpeg 렌더 → 최종 mp4
 - Evaluator 점수 + PASS/FAIL
 - 사람 피드백 → 룰 업데이트(상태 유지)
@@ -55,6 +55,23 @@ npm run dev
 ```
 
 브라우저: `http://localhost:3000/brief`
+
+## 이미지 생성: Gemini Nano Banana2(요청 반영)
+
+사용자가 말한 "나노바나나2"는 앱/마케팅 명칭에 가깝고, Gemini API에서는 이미지 모델이 아래처럼 노출됩니다.
+
+- 기본(빠름): `gemini-2.5-flash-image`
+- 고품질(텍스트/복잡 지시): `gemini-3-pro-image-preview`
+
+### 설정
+
+`backend/.env`에서:
+
+```bash
+IMAGE_PROVIDER=gemini
+GEMINI_API_KEY=YOUR_KEY
+GEMINI_IMAGE_MODEL=gemini-2.5-flash-image
+```
 
 ## Typecast TTS 연동
 

@@ -38,9 +38,15 @@ export default function ExportPage() {
       {err && <div style={{ color: "#ff8b8b" }}>{err}</div>}
 
       <div style={{ background: "#151515", padding: 16, borderRadius: 12 }}>
-        <div>status: <b>{job?.status ?? "..."}</b></div>
+        <div>
+          status: <b>{job?.status ?? "..."}</b>
+        </div>
         <div style={{ marginTop: 10 }}>
-          <video src={src} controls style={{ width: "100%", maxWidth: 720, borderRadius: 12, background: "#000" }} />
+          <video
+            src={src}
+            controls
+            style={{ width: "100%", maxWidth: 720, borderRadius: 12, background: "#000" }}
+          />
         </div>
         <div style={{ marginTop: 10 }}>
           <a href={src} style={{ color: "#8ab4ff" }}>

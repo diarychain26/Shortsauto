@@ -4,6 +4,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "mock")
+
+# IMAGE
+IMAGE_PROVIDER = os.getenv("IMAGE_PROVIDER", "pillow")  # pillow|gemini
+GEMINI_IMAGE_MODEL = os.getenv("GEMINI_IMAGE_MODEL", "gemini-2.5-flash-image")
+
+# TTS
 TTS_PROVIDER = os.getenv("TTS_PROVIDER", "edge")
 
 TYPECAST_API_KEY = os.getenv("TYPECAST_API_KEY", "")
