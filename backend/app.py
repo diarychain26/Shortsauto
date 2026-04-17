@@ -10,7 +10,6 @@ from studio.config import OUTPUT_DIR
 
 app = FastAPI(title="Shortsauto Backend")
 
-# Web UI(3000)에서 호출 가능하도록 CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
@@ -62,7 +61,6 @@ def list_jobs():
             }
         )
 
-    # 최신 생성이 위로 오도록
     items.sort(key=lambda x: x["job_id"], reverse=True)
     return items
 

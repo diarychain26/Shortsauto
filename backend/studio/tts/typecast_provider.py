@@ -6,8 +6,6 @@ from ..config import TYPECAST_API_KEY, TYPECAST_VOICE_ID
 
 
 class TypecastTTSProvider(TTSProvider):
-    """Typecast API 스펙에 맞게 이 파일만 수정하면 연동 완료."""
-
     def __init__(self):
         if not TYPECAST_API_KEY:
             raise RuntimeError("TYPECAST_API_KEY가 비어있음")
@@ -16,8 +14,6 @@ class TypecastTTSProvider(TTSProvider):
 
         self.api_key = TYPECAST_API_KEY
         self.voice_id = TYPECAST_VOICE_ID
-
-        # TODO: Typecast 문서에 맞게 base_url/endpoint 수정
         self.base_url = "https://api.typecast.ai"  # 예시
 
     def synth(self, text: str, out_path: str) -> str:
